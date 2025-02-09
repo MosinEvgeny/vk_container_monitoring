@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS pings (
+    ip_address VARCHAR(255) PRIMARY KEY,
+    ping_time INTEGER NOT NULL,
+    last_successful_ping TIMESTAMP WITHOUT TIME ZONE NOT NULL
+);
