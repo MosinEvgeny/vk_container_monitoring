@@ -21,8 +21,11 @@ func main() {
 
 	pingUsecase := usecase.NewPingUsecase(cfg.App.BackendURL, time.Duration(cfg.App.PingInterval)*time.Second)
 
-	// 3. Получение списка IP-адресов контейнеров (Заглушка - нужно реализовать динамическое обнаружение!)
-	containerIPs := []string{"127.0.0.1", "8.8.8.8"} // Пример IP-адресов
+	// Получение списка IP-адресов контейнеров
+	// TODO: нужно реализовать динамическое обнаружение
+
+	// Пример IP-адресов
+	containerIPs := []string{"127.0.0.1", "8.8.8.8"}
 
 	ticker := time.NewTicker(pingUsecase.GetPingInterval())
 	defer ticker.Stop()
